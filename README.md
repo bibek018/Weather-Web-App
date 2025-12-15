@@ -4,7 +4,7 @@ A modern, responsive weather application built with React and Vite that provides
 
 ## Project URL
 https://weather-web-app-zeta-nine.vercel.app/
-
+Based on:https://roadmap.sh/projects/weather-app
 ## Features
 
 - 🌍 **Search by City**: Enter any city name to get current weather information
