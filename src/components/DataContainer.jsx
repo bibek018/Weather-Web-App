@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-export const DataContainer = () => {
+export const DataContainer = ({lat,lon}) => {
   const [city, setCity] = useState("");
   const [temp1, setTemp1] = useState("");
   const [temp2, setTemp2] = useState("");
@@ -14,7 +14,7 @@ export const DataContainer = () => {
   const [visibility, setVisibility] = useState("");
   useEffect(() => {
     fetch(
-      `https://api.weatherapi.com/v1/current.json?key=16c8969c7a7d4de9946172740251012&q=kathmandu&aqi=no`
+      `https://api.weatherapi.com/v1/current.json?key=16c8969c7a7d4de9946172740251012&q=${lat},${lon}&aqi=no`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -36,7 +36,7 @@ export const DataContainer = () => {
         console.error("Error:", error);
       
       });
-  }, []);
+  }, [lat,lon]);
   const handleSearch = () => {
     fetch(
       `https://api.weatherapi.com/v1/current.json?key=16c8969c7a7d4de9946172740251012&q=${city}&aqi=no`
